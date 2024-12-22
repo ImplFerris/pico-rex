@@ -42,7 +42,6 @@ bind_interrupts!(struct Irqs {
 #[embassy_executor::main]
 async fn main(_spawner: Spawner) {
     let p = embassy_rp::init(Default::default());
-    let mut led = Output::new(p.PIN_25, Level::Low);
 
     // Setting up I2C send text to OLED display
     let sda = p.PIN_18;
@@ -61,13 +60,14 @@ async fn main(_spawner: Spawner) {
     game.draw_trex().unwrap();
 
     // spawner.spawn(button_handler(button)).unwrap();
-    let mut clicked_count = 0;
+    let mut clicked_count = 0; // To restart the game when it two times button clicked
     loop {
         if game.state == GameState::GameOver {
             if button.is_low() {
                 clicked_count += 1;
             }
             if clicked_count > 2 {
+                clicked_count = 0;
                 game = Game::new(game.display);
                 Timer::after_millis(500).await;
             }
@@ -79,10 +79,7 @@ async fn main(_spawner: Spawner) {
         game.draw_score().unwrap();
 
         if button.is_low() {
-            led.set_high();
             game.trex_jump();
-        } else {
-            led.set_low();
         }
 
         game.move_world().unwrap();
