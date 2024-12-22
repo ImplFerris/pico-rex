@@ -1,0 +1,29 @@
+[package]
+name = "pico-rex"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cortex-m = "0.7.6"
+cortex-m-rt = "0.7.0"
+
+embassy-executor = { git = "https://github.com/embassy-rs/embassy", rev = "dc18ee2", features = [
+  "arch-cortex-m",
+  "executor-thread",
+  "defmt",
+  "integrated-timers",
+] }
+defmt-rtt = "0.4"
+panic-probe = { version = "0.3" }
+embassy-time = { git = "https://github.com/embassy-rs/embassy", rev = "dc18ee2" }
+embassy-rp = { git = "https://github.com/embassy-rs/embassy", rev = "dc18ee2", features = [
+  "defmt",
+  "time-driver",
+  "critical-section-impl",
+  "rp235xa",
+  "binary-info",
+] }
+ssd1306 = "0.9.0"
+heapless = "0.8.0"
+embedded-graphics = "0.8.1"
+rand = { version = "0.8.5", default-features = false }
