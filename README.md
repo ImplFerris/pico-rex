@@ -1,8 +1,8 @@
 # pico-rex
-Dinosaur Game written in Rust for the Pico 2 (RP2350) with an OLED display, using the Embassy framework.
+Dinosaur Game written in Rust for the Raspberry Pi Pico 2 (RP2350) with an OLED display, using the Embassy framework.
 
 ## Hardware Requirements
-- Pico 2 (RP2350)
+- Raspberry Pi Pico 2 (RP2350)
 - SSD1306 OLED I2C 128x64 Display
 - Push button (with a cap) 
 - Jumper wires and breadboard
