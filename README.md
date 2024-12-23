@@ -18,6 +18,13 @@ Dinosaur Game written in Rust for the Raspberry Pi Pico 2 (RP2350) with an OLED 
 | GPIO 15  | One side of push button |
 | GND      | Other side of push button |
 
+## Example Video
+
+The video doesn't fully capture the visual quality. I'm not great at recording videos, but here's a preview of the game.  
+
+https://github.com/user-attachments/assets/7eb7a3f7-1ce7-49ca-9feb-2d63cbb8fcea
+
+
 
 ## TODO
 1. Implement running illusion for the T-Rex
